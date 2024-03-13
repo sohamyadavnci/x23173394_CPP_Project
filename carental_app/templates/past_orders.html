@@ -1,0 +1,40 @@
+{% extends 'customer_navbar.html' %}
+{% block title %} Past orders {% endblock %}
+{% block css %}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    {% if all_orders %}  
+    {% for order in all_orders %}
+<div class="card mb-3">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src={{order.car.image.url}} class="card-img" alt="..." style="height: 100%;">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+            <h5 class="card-title">{{order.car.name}}</h5>
+            <p class="card-text">{{order.days}}</p>
+            <p class="card-text"> € {{order.rent}}</p>
+            <p class="card-text"> € {{order.location}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <a href="/delete_order/{{order.id}}/" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete {{car.name}}?')">Delete</a>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <a href="#" class="btn btn-primary" >Modify</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+   
+    {% else %}
+    <br>
+    <h2>No past orders</h2>
+    {% endif %}
+  </div>
+
+
+  {% endblock %}
+

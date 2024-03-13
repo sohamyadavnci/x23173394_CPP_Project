@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+
+<style>
+  #upper{
+    height: 100%;
+    width: 100%;
+  }
+
+  .about-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 400px;
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+</style>
+
+{% endblock %}
+
+{% block body %}
+<div  id="upper">
+  <img src="/static/about.jpg" style="width: 100%; height: 100%;" alt="about image">
+</div>
+
+<div class="about-section">
+  <h1>Who are we?</h1>
+  <p>Application made for the people</p>
+  <p>Welcome at CruiseWise, we pledge to fullfill every indivitual's dream of travelling in a luxury car with a premium experience and relaxing journey.
+     Our low cost and flexible services make the rental proces easy for everyone, and our mission is to provide mobility solutions.
+     We at CruiseWise believe in sustainable environment and for that we promot fuel-efficient cars. Our team is always their to provide 24x7 support and the solution for your every car problem is just one phone call away. </p>
+  <p>| Thank you choosing us |</p>
+</div>
+
+{% endblock %}
+

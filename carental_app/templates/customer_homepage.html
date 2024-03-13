@@ -1,0 +1,46 @@
+{% extends 'customer_navbar.html' %}
+{% block title %} Cars Dashboard {% endblock %}
+
+{% block css %}
+<style>
+  h1 {
+      text-align: center;
+      color: black;
+  }
+  
+  
+</style>
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+  {% if cars %}
+  <div class="row">
+    
+  {% for car in cars %}
+      <div class="col-4 mt-4">
+        <div class="card">
+          <img class="card-img-top" src={{car.image.url}} alt="Card image cap" height="250px">
+          <div class="card-body">
+            <h5 class="card-title">{{car.name}}</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">More Details</a>
+            <a href="#" class="btn btn-primary">Rent Now</a>
+          </div>
+        </div>
+      </div>
+  {% endfor %}
+ 
+  </div>
+  {% else %}
+  <br>
+  <h2>No Cars Available</h2>
+  {% endif %}
+
+  
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <title>{% block title %} {% endblock %}</title>
+
+
+    <style>
+
+      body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: lightgrey;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            color: black;
+      }
+  
+      * {
+        box-sizing: border-box
+      }
+  
+      input[type=text],
+      input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+  
+      input[type=text]:focus,
+      input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+  
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+  
+      button:hover {
+        opacity: 1;
+      }
+  
+      .container {
+        padding: 20px;
+      }
+      .navbar {
+              background-color: black;
+              height: 75px;
+          }
+      .navbar-brand{
+        font-family: 'Times New Roman', Times, serif;
+      }
+    
+    #three{
+      
+      margin-left: 150px;
+    }
+    #two{
+      margin-right: 20px;
+    }
+    #one{
+      margin-right: 20px;
+    }
+    #zero{
+      margin-right: 20px;
+    }
+    #four{
+      margin-right: 20px;
+    }
+    #five{
+      margin-right: 20px;
+    }
+    #brandname{
+      font-size: 35px;
+    }
+    #nav_div{
+      margin-left: 400px;
+    }
+      
+    </style>
+
+
+    {% block css %} {% endblock %}
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg g-dark navbar-dark sticky-top">
+
+      <div class="container-fluid">
+        <a class="navbar-brand" id="brandname" href="/customer_homepage/">CruiseWise</a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div id="nav_div">
+          <ul class="navbar-nav">
+            <li class="nav-item" id="zero">
+              <a class="nav-link active" aria-current="page" id="zero" href="/customer_homepage/">All</a>
+            </li>
+            <li class="nav-item" id="one">
+              <a class="nav-link active" aria-current="page" id="one" href="/location_search/">Search Cars</a>
+            </li>
+            <li class="nav-item"id="two">
+              <a class="nav-link active" aria-current="page" id="two" href="/past_orders/">Past Orders</a>
+            </li>
+            <li class="nav-item"id="four">
+              <a class="nav-link active" aria-current="page" id="four" href="/about2/">About us</a>
+            </li>
+            <li class="nav-item"id="five">
+              <a class="nav-link active" aria-current="page" id="five" href="/contact_us/">Contact us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" id="three" href="/signout/">Signout</a>
+            </li>
+          </ul>
+        </div>
+
+        <a href="#" style="text-decoration: none; color: black; font-size: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Welcome {{request.user}}</a>
+
+      </div>
+    </nav>
+            
+           
+          </div>
+        </div>
+      </nav>
+
+
+      {% block body %}
+      {% endblock %}
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+    {% block js %} {% endblock %}
+    
+  </body>
+</html>

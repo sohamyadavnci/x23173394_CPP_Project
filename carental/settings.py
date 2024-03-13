@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['eeeb28c2ac7b42d998b9dd68e053653a.vfs.cloud9.eu-west-1.amazonaw
 # Application definition
 
 INSTALLED_APPS = [
+    'carental_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'carental.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ["templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,3 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'carental_app/media')
+MEDIA_URL = '/media/'
